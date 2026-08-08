@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "motion/react";
 import { navLinks } from "@/lib/site-data";
-import logo from "@/assets/clockedit-logo.png.asset.json";
+import logo from "@/assets/clockedit-logo.png";
 
 
 export function Nav() {
@@ -30,7 +30,7 @@ export function Nav() {
       >
         <a href="#top" className="flex items-center gap-2.5">
           <img
-            src={logo.url}
+            src={logo}
             alt="ClockEdit logo"
             className="h-[42px] w-auto object-contain"
           />

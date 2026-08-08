@@ -1,10 +1,13 @@
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
-
-
+import { aiVideos } from "@/lib/site-data";
+import { drivePreview } from "@/components/site/DriveVideo";
 
 export function Hero() {
+  const featuredVideo = aiVideos[0] ?? {
+    id: "1RFMPGzUOGDzlq8-KmMcLjUo44eOnTMWE",
+    title: "ClockEdit AI Commercial",
+  };
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-24 sm:pt-44 sm:pb-32">
       {/* ambient gradients */}
@@ -74,14 +77,12 @@ export function Hero() {
           className="relative"
         >
           <div className="glass-card overflow-hidden rounded-[28px] p-4 shadow-[0_50px_120px_-60px_rgba(0,0,0,1)]">
-            <video
-              src={heroVideo.url}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="aspect-video size-full rounded-[18px] object-cover"
+            <iframe
+              src={drivePreview(featuredVideo.id)}
+              title={featuredVideo.title}
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              className="aspect-video size-full rounded-[18px] border-0"
             />
           </div>
 
